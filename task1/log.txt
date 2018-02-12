@@ -1,0 +1,12 @@
+$ git log
+commit f7cf9cccb5dae374db73f0c316b6860bfe8926f8 (HEAD -> master)
+Author: Maria Selitskaya <m.i.selitskaya@gmail.com>
+Date:   Tue Feb 13 00:47:03 2018 +0300
+
+    commit status.txt file
+
+commit 9fb7b16d15400a20cde94f741a375bde400039ab
+Author: Maria Selitskaya <m.i.selitskaya@gmail.com>
+Date:   Tue Feb 13 00:41:52 2018 +0300
+
+    add .gitignore
