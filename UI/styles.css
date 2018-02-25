@@ -1,0 +1,73 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.clear {
+    clear: both;
+}
+div.header{
+    width: 100%;
+    height: 79px;
+    background-color:#f7f9fc/* #f0f0f0*/;
+    border-bottom: 1px solid #d1d1d0;
+
+}
+div.header div.logo{
+    float: left;
+    width: 50%;
+}
+div.header div.logo img{
+    padding-left: 50px;
+}
+div.manage-profile {
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+div.manage-profile ul{
+    padding-right: 40px;
+    padding-top: 15px;
+}
+
+div.manage-profile ul li{
+    display: inline;
+    list-style: none;
+    padding-right: 25px;
+}
+div.content {
+    text-align: center;
+    min-height:80%; 
+}
+div.photo-post{
+    margin: 1% 10%;
+    width: 80%;
+    min-height: 10%;
+    border: 1px solid #CCC;
+    background-color: #fcfdff;
+}
+div.photo-post ul.author{
+    text-align: left;
+    padding-left: 22.3%;
+}
+div.photo-post ul.author li{
+    display: inline;
+    list-style: none;
+}
+div.post-content{
+    height: 30%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+div.post-content .resource{
+    width: 90%;
+    float: left;
+}
+div.post-content .actions{
+    width: 10%;
+    float: right;
+}
+
+div.post-content .actions ul li{
+    list-style: none;
+}
