@@ -1,84 +1,322 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-        <meta charset="utf-8">
-<title>Фото-портал</title>
-<link rel=stylesheet href=styles.css>
+    <meta charset="utf-8">
+    <title>Фото-портал</title>
+    <link rel=stylesheet href=styles.css>
 </head>
+
 <body>
     <div class="header">
-       <div class="logo"> <img src="images/logo.png"></div>
-       <div class="manage-profile">
-           <ul>
-               <li><span>Mariya Selitskaya</span></li>
-               <li><a href="#">Выход</a></li>
-           </ul>
+        <div class="logo">
+            <img src="images/logo.png">
         </div>
-    </div>
-    <div class="clear"></div>
- <div class="content">
-        <div class="filter-section">
-                <div>
-                    <button>Фильтры</button>
-                </div>
-                <div class="filter-actions">
-                    <div class="filter-item">
-                        <input type="text" placeholder="Имя автора"/>
-                    </div>
-                    <div class="filter-item">
-                        <input type="text" placeholder="DD/MM/YYYY"/>
-                    </div>
-                    <div class="filter-item">
-                        <input type="text" placeholder="По хештегам"/>
-                    </div>
-                </div>
-                <button>Применить</button>
+        <div class="manage-profile">
+            <div>
+                <span>Mariya Selitskaya</span>
+                <a href="#">Выход</a>
             </div>
-    <div class="add">
-            
-                <button class="add-photo">Добавить фото</button>
-            
-    </div>
-    <div class="clear"></div>
-    <div class="photo-post">
-        <div class="author">
-           <ul>
-              <li><img src="images/user.png"></li> 
-              <li> Mariya Selitskaya</li>
-           </ul> 
-        </div>  
-        
-        <div class="actions">
-            <ul>
-               <li><img src="images/edit.png"></li> 
-               <li><img src="images/delete.png"></li>
-            </ul>
-        </div>
-        
-        <div class="post-content">
-            <div class="resource">
-                <img src="images/01.jpg">
-            </div>   
-                 
-        <div class="clear"></div>           
-        </div>
-        <div> 
-            <div class="date">25.02.2018 15:02</div>
-            <div class="like"><img src="images/like.png"> <span>Понравилось: 7</span></div>
-        </div>
-        <div class="clear"></div>
-        <div class="tag">#tag #tag #tag</div>
-        <div class="description"><p>Закат – это своеобразный итог дня. Заход солнца говорит о том, что день подходитк концу. В отличие от бодрого и оптимистического
-                     рассвета, закат наполнен романтикой и таинственностью... </p>
         </div>
     </div>
-    <button class="load-more"> Загрузить еще</button>
- </div>
- <div class="footer">
-    <p>Фото-портал PhotoStorage<br>
-    Mariay Selitskaya | m.i.selitskaya@gmail.com<br>
-    Последнее редактирование: 26.02.2018
-    </p>
- </div>
+
+    <div class="container">
+        <div class="box">
+            <div class="left">
+                <button class="button filter-button">Фильтры</button>
+            </div>
+            <div class="right">
+                <button class="button add-button">Добавить фото</button>
+            </div>
+        </div>
+        <div class="filters">
+            <div class="filter">
+                <input type="text" placeholder="Имя автора" />
+            </div>
+            <div class="filter">
+                <input type="date" placeholder="DD/MM/YYYY" />
+            </div>
+            <div class="filter">
+                <input type="text" placeholder="По хештегам" />
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="left">
+                <button class="button apply-button">Применить</button>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <div class="box">
+                <div class="left">
+                    <img src="images/user.png"> Mariya Selitskaya
+                </div>
+                <div class="right">
+                    <img src="images/edit.png">
+                    <img src="images/delete.png">
+                </div>
+            </div>
+            <div class="content">
+                <img class="img-responsive" src="images/01.jpg">
+            </div>
+            <div class="box">
+                <div class="left">25.02.2018 15:02</div>
+                <div class="right">
+                    <img src="images/like.png">
+                    <span>Понравилось: 7</span>
+                </div>
+            </div>
+            <div>#tag #tag #tag</div>
+            <div>
+                <p>Закат – это своеобразный итог дня. Заход солнца говорит о том, что день подходитк концу. В отличие от бодрого
+                    и оптимистического рассвета, закат наполнен романтикой и таинственностью... </p>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="box">
+                <div class="left">
+                    <img src="images/user.png"> Mariya Selitskaya
+                </div>
+                <div class="right">
+                    <img src="images/edit.png">
+                    <img src="images/delete.png">
+                </div>
+            </div>
+            <div class="content">
+                <img class="img-responsive" src="images/02.jpg">
+            </div>
+            <div class="box">
+                <div class="left">25.02.2018 15:02</div>
+                <div class="right">
+                    <img src="images/like.png">
+                    <span>Понравилось: 7</span>
+                </div>
+            </div>
+            <div>#tag #tag #tag</div>
+            <div>
+                <p>Закат – это своеобразный итог дня. Заход солнца говорит о том, что день подходитк концу. В отличие от бодрого
+                    и оптимистического рассвета, закат наполнен романтикой и таинственностью... </p>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="box">
+                <div class="left">
+                    <img src="images/user.png"> Mariya Selitskaya
+                </div>
+                <div class="right">
+                    <img src="images/edit.png">
+                    <img src="images/delete.png">
+                </div>
+            </div>
+            <div class="content">
+                <img class="img-responsive" src="images/03.jpg">
+            </div>
+            <div class="box">
+                <div class="left">25.02.2018 15:02</div>
+                <div class="right">
+                    <img src="images/like.png">
+                    <span>Понравилось: 7</span>
+                </div>
+            </div>
+            <div>#tag #tag #tag</div>
+            <div>
+                <p>Закат – это своеобразный итог дня. Заход солнца говорит о том, что день подходитк концу. В отличие от бодрого
+                    и оптимистического рассвета, закат наполнен романтикой и таинственностью... </p>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="box">
+                <div class="left">
+                    <img src="images/user.png"> Mariya Selitskaya
+                </div>
+                <div class="right">
+                    <img src="images/edit.png">
+                    <img src="images/delete.png">
+                </div>
+            </div>
+            <div class="content">
+                <img class="img-responsive" src="images/04.jpg">
+            </div>
+            <div class="box">
+                <div class="left">25.02.2018 15:02</div>
+                <div class="right">
+                    <img src="images/like.png">
+                    <span>Понравилось: 7</span>
+                </div>
+            </div>
+            <div>#tag #tag #tag</div>
+            <div>
+                <p>Закат – это своеобразный итог дня. Заход солнца говорит о том, что день подходитк концу. В отличие от бодрого
+                    и оптимистического рассвета, закат наполнен романтикой и таинственностью... </p>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="box">
+                <div class="left">
+                    <img src="images/user.png"> Mariya Selitskaya
+                </div>
+                <div class="right">
+                    <img src="images/edit.png">
+                    <img src="images/delete.png">
+                </div>
+            </div>
+            <div class="content">
+                <img class="img-responsive" src="images/05.jpg">
+            </div>
+            <div class="box">
+                <div class="left">25.02.2018 15:02</div>
+                <div class="right">
+                    <img src="images/like.png">
+                    <span>Понравилось: 7</span>
+                </div>
+            </div>
+            <div>#tag #tag #tag</div>
+            <div>
+                <p>Закат – это своеобразный итог дня. Заход солнца говорит о том, что день подходитк концу. В отличие от бодрого
+                    и оптимистического рассвета, закат наполнен романтикой и таинственностью... </p>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="box">
+                <div class="left">
+                    <img src="images/user.png"> Mariya Selitskaya
+                </div>
+                <div class="right">
+                    <img src="images/edit.png">
+                    <img src="images/delete.png">
+                </div>
+            </div>
+            <div class="content">
+                <img class="img-responsive" src="images/01.jpg">
+            </div>
+            <div class="box">
+                <div class="left">25.02.2018 15:02</div>
+                <div class="right">
+                    <img src="images/like.png">
+                    <span>Понравилось: 7</span>
+                </div>
+            </div>
+            <div>#tag #tag #tag</div>
+            <div>
+                <p>Закат – это своеобразный итог дня. Заход солнца говорит о том, что день подходитк концу. В отличие от бодрого
+                    и оптимистического рассвета, закат наполнен романтикой и таинственностью... </p>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="box">
+                <div class="left">
+                    <img src="images/user.png"> Mariya Selitskaya
+                </div>
+                <div class="right">
+                    <img src="images/edit.png">
+                    <img src="images/delete.png">
+                </div>
+            </div>
+            <div class="content">
+                <img class="img-responsive" src="images/02.jpg">
+            </div>
+            <div class="box">
+                <div class="left">25.02.2018 15:02</div>
+                <div class="right">
+                    <img src="images/like.png">
+                    <span>Понравилось: 7</span>
+                </div>
+            </div>
+            <div>#tag #tag #tag</div>
+            <div>
+                <p>Закат – это своеобразный итог дня. Заход солнца говорит о том, что день подходитк концу. В отличие от бодрого
+                    и оптимистического рассвета, закат наполнен романтикой и таинственностью... </p>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="box">
+                <div class="left">
+                    <img src="images/user.png"> Mariya Selitskaya
+                </div>
+                <div class="right">
+                    <img src="images/edit.png">
+                    <img src="images/delete.png">
+                </div>
+            </div>
+            <div class="content">
+                <img class="img-responsive" src="images/03.jpg">
+            </div>
+            <div class="box">
+                <div class="left">25.02.2018 15:02</div>
+                <div class="right">
+                    <img src="images/like.png">
+                    <span>Понравилось: 7</span>
+                </div>
+            </div>
+            <div>#tag #tag #tag</div>
+            <div>
+                <p>Закат – это своеобразный итог дня. Заход солнца говорит о том, что день подходитк концу. В отличие от бодрого
+                    и оптимистического рассвета, закат наполнен романтикой и таинственностью... </p>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="box">
+                <div class="left">
+                    <img src="images/user.png"> Mariya Selitskaya
+                </div>
+                <div class="right">
+                    <img src="images/edit.png">
+                    <img src="images/delete.png">
+                </div>
+            </div>
+            <div class="content">
+                <img class="img-responsive" src="images/04.jpg">
+            </div>
+            <div class="box">
+                <div class="left">25.02.2018 15:02</div>
+                <div class="right">
+                    <img src="images/like.png">
+                    <span>Понравилось: 7</span>
+                </div>
+            </div>
+            <div>#tag #tag #tag</div>
+            <div>
+                <p>Закат – это своеобразный итог дня. Заход солнца говорит о том, что день подходитк концу. В отличие от бодрого
+                    и оптимистического рассвета, закат наполнен романтикой и таинственностью... </p>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="box">
+                <div class="left">
+                    <img src="images/user.png"> Mariya Selitskaya
+                </div>
+                <div class="right">
+                    <img src="images/edit.png">
+                    <img src="images/delete.png">
+                </div>
+            </div>
+            <div class="content">
+                <img class="img-responsive" src="images/05.jpg">
+            </div>
+            <div class="box">
+                <div class="left">25.02.2018 15:02</div>
+                <div class="right">
+                    <img src="images/like.png">
+                    <span>Понравилось: 7</span>
+                </div>
+            </div>
+            <div>#tag #tag #tag</div>
+            <div>
+                <p>Закат – это своеобразный итог дня. Заход солнца говорит о том, что день подходитк концу. В отличие от бодрого
+                    и оптимистического рассвета, закат наполнен романтикой и таинственностью... </p>
+            </div>
+        </div>
+        <div>
+            <button class="load-more"> Загрузить еще</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Фото-портал PhotoStorage
+            <br> Mariya Selitskaya | m.i.selitskaya@gmail.com
+            <br> Последнее редактирование: 27.02.2018
+        </p>
+    </div>
 </body>
 </html>

@@ -1,139 +1,124 @@
-body {
+html, body {
     padding: 0;
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.clear {
-    clear: both;
-}
-div.header{
+.header {
     width: 100%;
     height: 70px;
-    background-color:#f7f9fc/* #f0f0f0*/;
+    background-color:#f7f9fc;
     border-bottom: 1px solid #d1d1d0;
-
+    display: flex;
+    position: fixed;
+    top: 0;
 }
-div.header div.logo{
-    float: left;
+.header .logo {
     width: 50%;
 }
-div.header div.logo img{
+.header .logo img {
     padding-left: 50px;
 }
-div.manage-profile {
-    float: right;
+.header .manage-profile {
     width: 50%;
+}
+.header .manage-profile div {
+    padding: 25px 30px;
     text-align: right;
 }
-div.manage-profile ul{
-    padding-right: 50px;
-    padding-top: 15px;
-}
-
-div.manage-profile ul li{
-    display: inline;
-    list-style: none;
-    padding-right: 25px;
-}
-div.filter-section{
-    float: left;
+.filter-section{
     padding-left: 20%;
     padding-top: 20px;
 }
-.filter-item{
+.filter-item {
     margin: 15px 0px;
     width: 30%;
     min-height: 20px;
 }
-
-div.add {
-    text-align: right;
+.add {
     padding-right: 20%;
     padding-top: 20px;
 }
-.add-photo {
-  font-size: 18px;
-  color: white;
-  text-decoration: none;
-  padding: 10px 30px;
-  background:#ffb912;
-  box-shadow: 0 -2px #ffa312 inset;
-  border: 0;
-}
-.add-photo:hover { background: #fc9a00; }
-.add-photo:active {
-  background: #f28108;
-  box-shadow: 0 3px #fc9a00 inset;
-}
-
-div.content {
-    text-align: center;
-    min-height:80%; 
-}
-div.photo-post{
-    margin: 1% 20%;
+.container {
     width: 60%;
-    min-height: 10%;
-    border: 1px solid #CCC;
-    background-color: #fcfdff;
+    margin: 70px auto 30px;
 }
-div.author{
-    float: left;
-    padding-left: 20%;    
+.wrapper {
+    background: rgb(248, 248, 248);
+    padding: 0 100px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 20px;
 }
-div.author ul li{
-    display: inline;
-    list-style: none;   
+.box {
+    display: flex;
+    padding: 10px 0;
 }
-div.post-content{
-    height: 30%;
-    margin-left: 20%;
-    margin-right: 20%;
+.box .left {
+    width: 50%;
 }
-div.actions ul li{
-    display: inline;
-    float: right;
-    margin-right: 5%;
+.box .right {
+    width: 50%;
+    text-align: right;
 }
-
-div.date {
-    float: left;
-    padding-left: 20%;
-
+.wrapper .img-responsive {
+    width: 100%;
 }
-div.like {
-    float: right;
-    padding-right: 10%;
+.filters {
+     display: flex;
 }
-div.tag {
-    text-align: left;
-    padding-left: 20%;
+.filters .filter {
+    width:  33.333333%;
 }
-div.description p{
-    text-align: left;
-    padding-left: 20%;
-    padding-right: 20%;
+input[type=text], input[type=date]{
+    width: 250px;
+    height: 32px;
+    padding-left: 5px; 
 }
 .load-more {
-        font-size: 16px;
-        color: white;
-        width: 60%;
-        text-decoration: none;
-        padding: 5px;
-        background:#ffb912;
-        box-shadow: 0 -2px #ffa312 inset;
-        border: 0;
-      }
- .load-more:hover { background: #fc9a00; }      
-div.footer {
+    font-size: 16px;
+    color: white;
+    width: 100%;
+    text-decoration: none;
+    padding: 5px;
+    background:#ffb912;
+    box-shadow: 0 -2px #ffa312 inset;
+    border: 0;
+}
+.load-more:hover { 
+    background: #fc9a00; 
+}   
+.footer {
     margin-top: 5%;
     width: 100%;
     height: 80px;
-    background-color:#f7f9fc/* #f0f0f0*/;
+    background-color:#f7f9fc;
     border-top: 1px solid #d1d1d0;
 }
-div.footer p {
+.footer p {
     font-size: 14px;
     color: dimgray;
     padding-left: 20%;
+}
+.button{
+    color: white;
+    text-decoration: none;
+    padding: 10px 30px;
+    border: 0;
+}
+.filter-button, .apply-button{
+    font-size: 14px;
+    color: purple;
+    background:#f7f9fc;
+    border: 1px solid #ccc;  
+}
+.add-button{
+    font-size: 18px;
+    background:#ffb912;
+    box-shadow: 0 -2px #ffa312 inset;
+}
+.add-button:hover { 
+    background: #fc9a00;
+}
+.add-button:active {
+  background: #f28108;
+  box-shadow: 0 3px #fc9a00 inset;
 }
