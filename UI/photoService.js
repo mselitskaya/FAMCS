@@ -332,7 +332,7 @@ var photoService = (function () {
             console.log('Поле id обязательное');
             return false;
         }
-        if (id !== 'string') {
+        if (typeof id !== 'string') {
             console.log('Неверный формат параметра id: ' + typeof photoPost.id);
             return false;
 
