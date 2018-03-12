@@ -26,9 +26,8 @@ var photoService = (function () {
     }
 
     function getPhotoPost(id) {
-        if (typeof id !== 'string') {
-            console.log('Неверный формат параметра id: ' + typeof id);
-            return;
+        if(!photoPostValidateService.isValidFieldFormat(id, 'string')){
+            return null;
         }
 
         return photoPostDataStorage.getPhotoPosts().find(photoPost => photoPost.id == id);
@@ -103,7 +102,7 @@ var photoService = (function () {
     }
 
     function addPhotoPost(photoPost) {
-        if (validatePhotoPost(photoPost) != true) {
+        if (!validatePhotoPost(photoPost)) {
             console.log('Проверьте корректность введенных данных');
             return false;
         }
