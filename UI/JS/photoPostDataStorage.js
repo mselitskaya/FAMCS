@@ -34,7 +34,7 @@ var photoPostDataStorage = (function () {
             author: 'Mariya Selitskaya',
             photoLink: 'images/04.jpg',
             hashTags: [],
-            likes: ['Ivanovne']
+            likes: ['UserOne']
         },
         {
             id: '5',

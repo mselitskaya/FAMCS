@@ -18,8 +18,8 @@
                     <span data-target="author"></span>
                 </div>
                 <div class="right">
-                    <img src="images/edit.png">
-                    <img src="images/delete.png">
+                    <img src="images/edit.png" class="edit-icon hide-element">
+                    <img src="images/delete.png" class="delete-icon hide-element">
                 </div>
             </div>
             <div class="content">
@@ -44,11 +44,8 @@
         </div>
         <div class="manage-profile">
             <div>
-                <img src="images/user-icon.png">
-                <span>Mariya Selitskaya</span>
-                <a href="#">
-                    <img src="images/exit.png">
-                </a>
+                <span id="activeUser"></span>
+                <a href="#" ><span id="profileAction"></span></a>
             </div>
         </div>
     </div>
@@ -97,11 +94,13 @@
     <div class="footer">
         <p>Фото-портал PhotoStorage
             <br> Mariya Selitskaya | m.i.selitskaya@gmail.com
-            <br> Последнее редактирование: 27.02.2018
+            <br> Последнее редактирование: 12.03.2018
         </p>
     </div>
+
     <script src="JS\photoPostClientService.js"></script>
     <script>photoPostClientService.getPhotoPosts()</script>
+    <script src="JS\app.js"></script>
 </body>
 
 </html>

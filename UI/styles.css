@@ -124,3 +124,6 @@ input[type=text], input[type=date], select{
   background: #f28108;
   box-shadow: 0 3px #fc9a00 inset;
 }
+.hide-element {
+  display: none;
+}

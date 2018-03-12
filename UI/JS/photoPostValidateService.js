@@ -1,0 +1,3 @@
+var photoPostValidateService = (function () {
+    return {}
+})();
