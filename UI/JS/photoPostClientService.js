@@ -1,9 +1,8 @@
 var photoPostClientService = (function () {
 
-    const template = document.getElementById('photo-post-template');
-    const container = document.getElementById('photoPosts');
-
     function renderPhotoPost(photoPost) {
+        const template = document.getElementById('photo-post-template');
+        const container = document.getElementById('photoPosts');
         let newPhotoPost = document.importNode(template.content, true);
         let dataTargets = newPhotoPost.querySelectorAll('[data-target]');
 
@@ -42,19 +41,51 @@ var photoPostClientService = (function () {
     }
 
     function removePhotoPost(id){
-       return photoService.removePhotoPost(id);
+        var result = photoService.removePhotoPost(id);
+        if(result) {
+            getPhotoPosts();
+        }
+        else {
+            alert ('При удалении поста произошла ошибка')
+        }
     }
 
     function addPhotoPost(photoPost) {
-        return photoService.addPhotoPost(photoPost);
+        var result = photoService.addPhotoPost(photoPost);
+        if(result){
+            getPhotoPosts();
+        }
+        else{
+            alert('При добавлении нового фото-поста что-то пошло не так =)');
+        }
     }
 
     function getPhotoPost(id){
         return photoService.getPhotoPost(id);
     }
     
-    function editPhotoPost(id, photoPost){
-        return photoService.editPhotoPost(id, photoPost);
+    function editPhotoPost(id, photoPost) {
+        var editresult = photoService.editPhotoPost(id, photoPost);
+        if (editresult) {
+            getPhotoPosts();
+        }
+        else {
+            alert('При редактировании фото-поста возникла ошибка');
+        }
+    }
+
+    function getAllHashTags(){
+        var hashTags = photoService.getAllHashTags();
+        var hashTagsSelector = document.getElementById('hashTags');
+
+        if(hashTagsSelector){
+            hashTags.forEach(function(hashTag){
+                var option = document.createElement("option");
+                option.text = hashTag;
+                option.value = hashTag;
+                hashTagsSelector.add(option);
+            });
+        }
     }
 
     return {
@@ -62,7 +93,7 @@ var photoPostClientService = (function () {
         removePhotoPost: removePhotoPost,
         addPhotoPost: addPhotoPost,
         getPhotoPost: getPhotoPost,
-        editPhotoPost: editPhotoPost
-
+        editPhotoPost: editPhotoPost,
+        getAllHashTags: getAllHashTags
     }
 })();

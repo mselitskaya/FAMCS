@@ -7,10 +7,14 @@
     <link rel=stylesheet href=styles.css>
 </head>
 
-<body>
+<body> 
     <script src="JS\photoPostDataStorage.js"></script>
     <script src="JS\photoPostValidateService.js"></script>
     <script src="photoService.js"></script>
+    <script src="JS\photoPostClientService.js"></script>
+    <script src ="JS\userClient.js"></script>
+    <script src="JS\app.js"></script>
+
     <template id="photo-post-template">
         <div class="wrapper" data-target="id">
             <div class="box">
@@ -68,14 +72,7 @@
                 <input type="date" placeholder="DD/MM/YYYY" />
             </div>
             <div class="filter">
-                <select name="по хештегам" multiple>
-                    <option>#tag</option>
-                    <option>#tag</option>
-                    <option>#tag</option>
-                    <option>#tag</option>
-                    <option>#tag</option>
-                    <option>#tag</option>
-                </select>
+                <select id="hashTags" name="по хештегам" multiple></select>
             </div>
         </div>
 
@@ -95,13 +92,14 @@
     <div class="footer">
         <p>Фото-портал PhotoStorage
             <br> Mariya Selitskaya | m.i.selitskaya@gmail.com
-            <br> Последнее редактирование: 12.03.2018
+            <br> Последнее редактирование: 19.03.2018
         </p>
     </div>
-
-    <script src="JS\photoPostClientService.js"></script>
-    <script>photoPostClientService.getPhotoPosts()</script>
-    <script src="JS\app.js"></script>
+    <script>photoPortalApp.init();</script>
+    <script>
+        photoPostClientService.getPhotoPosts();
+        photoPostClientService.getAllHashTags();
+    </script>
 </body>
 
 </html>

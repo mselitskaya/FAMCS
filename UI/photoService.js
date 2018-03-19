@@ -201,13 +201,31 @@ var photoService = (function () {
         }
         return true;
     }
+
+    function getAllHashTags() {
+        var hashTags = [];
+        var allPhotoPosts = photoPostDataStorage.getPhotoPosts();
+        if (allPhotoPosts) {
+            allPhotoPosts.forEach(function (photoPost) {
+                if (photoPost.hashTags && photoPost.hashTags.length != 0) {
+                    photoPost.hashTags.forEach(function (hashTag) {
+                        if (hashTags.findIndex(element => element == hashTag) == -1) {
+                            hashTags.push(hashTag);
+                        }
+                    });
+                }
+            });
+        }
+        return hashTags;
+    }
+
     return {
         getPhotoPosts: getPhotoPosts,
         getPhotoPost: getPhotoPost,
         validatePhotoPost: validatePhotoPost,
         addPhotoPost: addPhotoPost,
         removePhotoPost: removePhotoPost,
-        editPhotoPost: editPhotoPost
-
+        editPhotoPost: editPhotoPost,
+        getAllHashTags: getAllHashTags
     }
 })();
