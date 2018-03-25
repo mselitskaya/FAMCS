@@ -22,7 +22,7 @@ var photoPostDataStorage = (function () {
             id: '3',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. ',
             createdAt: new Date('2018-03-03T23:00:00'),
-            author: 'Mariya Selitskaya',
+            author: 'Mark Zuckerberg',
             photoLink: 'images/03.jpg',
             hashTags: ['#зима', '#холодно', '#солнце'],
             likes: []
@@ -49,7 +49,7 @@ var photoPostDataStorage = (function () {
             id: '6',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. ',
             createdAt: new Date('2018-02-21T23:00:00'),
-            author: 'Mariya Selitskaya',
+            author: 'Mark Zuckerberg',
             photoLink: 'images/06.jpg',
             hashTags: [],
             likes: []
@@ -112,7 +112,7 @@ var photoPostDataStorage = (function () {
             id: '13',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. ',
             createdAt: new Date('2018-02-03T23:00:00'),
-            author: 'Mariya Selitskaya',
+            author: 'Pavel Durov',
             photoLink: 'images/13.jpg',
             hashTags: [],
             likes: []
@@ -130,7 +130,7 @@ var photoPostDataStorage = (function () {
             id: '15',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. ',
             createdAt: new Date('2018-01-30T23:00:00'),
-            author: 'Mariya Selitskaya',
+            author: 'Mark Zuckerberg',
             photoLink: 'images/15.jpg',
             hashTags: [],
             likes: []

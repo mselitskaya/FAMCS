@@ -219,6 +219,21 @@ var photoService = (function () {
         return hashTags;
     }
 
+    function getAuthors() {
+        var authors = [];
+        var allPhotoPosts = photoPostDataStorage.getPhotoPosts();
+        if (allPhotoPosts) {
+            allPhotoPosts.forEach( function (photoPost) {
+                if (photoPost.author && photoPost.author.length != 0) {
+                        if (authors.findIndex (element => element == photoPost.author) == -1) {
+                            authors.push(photoPost.author);
+                        }
+                    }
+            });
+        }
+        return authors;
+    }
+
     return {
         getPhotoPosts: getPhotoPosts,
         getPhotoPost: getPhotoPost,
@@ -226,6 +241,7 @@ var photoService = (function () {
         addPhotoPost: addPhotoPost,
         removePhotoPost: removePhotoPost,
         editPhotoPost: editPhotoPost,
-        getAllHashTags: getAllHashTags
+        getAllHashTags: getAllHashTags,
+        getAuthors: getAuthors
     }
 })();

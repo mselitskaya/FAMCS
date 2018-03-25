@@ -87,6 +87,71 @@ var photoPostClientService = (function () {
             });
         }
     }
+    function getAllAuthors(){
+        var authors = photoService.getAuthors();
+        var authorSelector = document.getElementById('author');
+
+        if(authorSelector){
+            authors.forEach(function(author){
+                var option = document.createElement('option');
+                option.text = author;
+                option.value = author;
+                authorSelector.add(option);
+            });
+        }
+    }
+
+    function clearPhotoPostsContainer() {
+        var photoPosts = document.getElementById('photoPosts');
+        if (photoPosts) {
+            photoPosts.innerHTML = '';
+        }
+    }
+   
+    function showLoginPopup() {
+        var profileAction = document.getElementById ('profileAction');
+        if (profileAction) {
+
+            if(profileAction.innerText == 'Войти'){
+                var popup = document.getElementById('login-popup');
+
+                if(popup){
+                    popup.style.display = 'block';
+                }
+            }
+            else if(profileAction.innerText == 'Выйти'){
+                logout();
+            }
+        }
+    }
+
+    function hideLoginPopup() {
+        var popup = document.getElementById('login-popup');
+        if (popup) {
+            popup.style.display = 'none';
+        }
+    } 
+
+
+    function login() {
+        var loginForm = document.forms.loginForm;
+        var login = loginForm.elements.login.value;
+        var password = loginForm.elements.password.value;
+
+        var isLogin = userService.login(login, password);
+
+        if (!isLogin) {
+            alert('Пользователя с таким паролем и логином не найдено');
+            return false;
+        }
+
+        hideLoginPopup();
+        return true;
+    }
+
+    function logout(){
+        userService.logout();
+    }
 
     return {
         getPhotoPosts: getPhotoPosts,
@@ -94,6 +159,12 @@ var photoPostClientService = (function () {
         addPhotoPost: addPhotoPost,
         getPhotoPost: getPhotoPost,
         editPhotoPost: editPhotoPost,
-        getAllHashTags: getAllHashTags
+        getAllHashTags: getAllHashTags,
+        getAllAuthors:  getAllAuthors,
+        clearPhotoPostsContainer: clearPhotoPostsContainer,
+        showLoginPopup: showLoginPopup,
+        hideLoginPopup: hideLoginPopup,
+        login: login,
+        logout: logout
     }
 })();

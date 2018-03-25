@@ -16,15 +16,15 @@
     <script src="JS\app.js"></script>
 
     <template id="photo-post-template">
-        <div class="wrapper" data-target="id">
+        <div class="wrapper">
             <div class="box">
                 <div class="left">
                     <img src="images/user.png">
                     <span data-target="author"></span>
                 </div>
                 <div class="right">
-                    <img src="images/edit.png" class="edit-icon hide-element">
-                    <img src="images/delete.png" class="delete-icon hide-element">
+                    <img src="images/edit.png" class="edit-icon hide-element" data-target="id">
+                    <img src="images/delete.png" class="delete-icon hide-element" data-target="id">
                 </div>
             </div>
             <div class="content">
@@ -61,18 +61,22 @@
                 <button class="button filter-button">Фильтры</button>
             </div>
             <div class="right">
-                <button class="button add-button">Добавить фото</button>
+                <button class="button add-button hide-element" id="add-photo-button">Добавить фото</button>
             </div>
         </div>
         <div class="filters">
             <div class="filter">
-                <input type="text" placeholder="Имя автора" />
+                <select id="author" placeholder="Имя автора">
+                    <option value="">Выберите автора</option>
+                </select>
             </div>
             <div class="filter">
                 <input type="date" placeholder="DD/MM/YYYY" />
             </div>
             <div class="filter">
-                <select id="hashTags" name="по хештегам" multiple></select>
+                <select id="hashTags" placeholder="по хештегам">
+                        <option>Фильтр по хэштегам</option>
+                </select>
             </div>
         </div>
 
@@ -89,16 +93,31 @@
         </div>
     </div>
 
+
     <div class="footer">
         <p>Фото-портал PhotoStorage
             <br> Mariya Selitskaya | m.i.selitskaya@gmail.com
             <br> Последнее редактирование: 19.03.2018
         </p>
     </div>
+    <!-- Модальное окно для входа на сайт -->
+    <div class="login-popup" id="login-popup">
+        <div class="popup-form">
+            <span class="close" id="close-login-popup">&times;</span>
+            <form name = "loginForm">
+                <input name ="login" type="text" placeholder="логин">
+                <input name="password" type="password" placeholder="пароль">
+    
+                <button id="login-button">Войти</button>
+            </form>
+        </div>
+    </div>
+
     <script>photoPortalApp.init();</script>
     <script>
         photoPostClientService.getPhotoPosts();
         photoPostClientService.getAllHashTags();
+        photoPostClientService.getAllAuthors();
     </script>
 </body>
 
