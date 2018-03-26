@@ -8,6 +8,7 @@
 </head>
 
 <body> 
+    <script src="JS\dataConverter.js"></script>
     <script src="JS\photoPostDataStorage.js"></script>
     <script src="JS\photoPostValidateService.js"></script>
     <script src="photoService.js"></script>
@@ -105,13 +106,49 @@
         <div class="popup-form">
             <span class="close" id="close-login-popup">&times;</span>
             <form name = "loginForm">
-                <input name ="login" type="text" placeholder="логин">
-                <input name="password" type="password" placeholder="пароль">
+                <input name ="login" type="text" placeholder="Логин">
+                <input name="password" type="password" placeholder="Пароль">
     
                 <button id="login-button">Войти</button>
             </form>
         </div>
     </div>
+<!-- Модальное окно для добавления фото -->
+    <div class="photo-popup" id="addPhotoPopup">
+        <div class="popup-form">
+            <span class="close" id="add-photo-popup">&times;</span>
+        
+            <form name="addPhotoForm">
+                <h1>Добавление новой публикации</h1>
+                <p>Добавьте описание к фотографии*</p>
+                <textarea name="description" rows="4" type="textarea" maxlength="199" placeholder="Описание"></textarea>
+                <p>Добавьте хэштеги</p>
+                <input name="hashTags" type="text" placeholder="Хэштеги">
+                <p>Выберите фотографию*</p>
+                    <input type="file" name="photo" accept="image/*,image/jpeg">
+                    <p class="footnote">* - поля, обязательные для заполнения</p>
+                    <button id="addPhotoButton">Опубликовать</button>
+            </form>
+        </div>
+    </div>
+<!-- Модальное окно для редактирования фото -->
+<div class="photo-popup" id="editPhotoPopup">
+    <div class="popup-form">
+        <span class="close" id="edit-photo-popup">&times;</span>
+    
+        <form name="editPhotoForm">
+            <h1>Редактрование публикации</h1>
+            <p>Добавьте описание к фотографии*</p>
+            <textarea name="description" rows="4" type="textarea" maxlength="199" placeholder="Описание"></textarea>
+            <p>Добавьте хэштеги</p>
+            <input name="hashTags" type="text" placeholder="Хэштеги">
+            <p>Выберите фотографию*</p>
+                <input type="file" name="photo" accept="image/*,image/jpeg">
+                <p class="footnote">* - поля, обязательные для заполнения</p>
+                <button id="editPhotoButton">Опубликовать</button>
+        </form>
+    </div>
+</div>
 
     <script>photoPortalApp.init();</script>
     <script>

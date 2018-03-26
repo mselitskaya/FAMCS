@@ -191,11 +191,22 @@ var photoPostDataStorage = (function () {
         }
     ];
 
+    localStorage.setItem('photoPosts', dataConverter.convertToString(photoStorage));
+
     function getPhotoPosts() {
-        return photoStorage;
+        //return photoStorage;
+        return dataConverter.conventToObject(localStorage.getItem('photoPosts'));
+    }
+
+    function updatePhotoPost(index, photoPost){
+       //photoStorage[index] = photoPost;
+       var posts = dataConverter.conventToObject(localStorage.getItem('photoPosts'));
+       posts[index] = photoPost;
+       localStorage.setItem('photoPosts', dataConverter.convertToString(posts));
     }
     
     return {
-        getPhotoPosts: getPhotoPosts
+        getPhotoPosts: getPhotoPosts,
+        updatePhotoPost: updatePhotoPost
     }
 })();

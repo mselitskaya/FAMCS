@@ -153,6 +153,36 @@ var photoPostClientService = (function () {
         userService.logout();
     }
 
+    function hideAddPhotoPopup(){
+        var popup = document.getElementById('addPhotoPopup');
+        if (popup) {
+            popup.style.display = 'none';
+        }
+    }
+    function showAddPhotoPopup(){
+        var popup = document.getElementById('addPhotoPopup');
+
+        if(popup){
+            popup.style.display = 'block';
+        }
+     }
+     
+    function hideEditPhotoPopup(){
+        var popup = document.getElementById('editPhotoPopup');
+        if (popup) {
+            popup.style.display = 'none';
+        }
+    }
+
+    function showEditPhotoPopup(photoPostId){
+        var popup = document.getElementById('editPhotoPopup');
+
+        if(popup){
+            popup.style.display = 'block';
+            popup.setAttribute('data-photo-post-id', photoPostId);
+        }
+     }
+
     return {
         getPhotoPosts: getPhotoPosts,
         removePhotoPost: removePhotoPost,
@@ -165,6 +195,11 @@ var photoPostClientService = (function () {
         showLoginPopup: showLoginPopup,
         hideLoginPopup: hideLoginPopup,
         login: login,
-        logout: logout
+        logout: logout,
+        hideAddPhotoPopup: hideAddPhotoPopup,
+        showAddPhotoPopup: showAddPhotoPopup,
+        hideEditPhotoPopup: hideEditPhotoPopup,
+        showEditPhotoPopup: showEditPhotoPopup
+
     }
 })();

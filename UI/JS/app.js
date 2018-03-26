@@ -10,7 +10,9 @@ var photoPortalApp = (function () {
         var profileActionElement = document.getElementById('profileAction');
         var closeLoginPopup = document.getElementById('close-login-popup');        
         var loginButton = document.getElementById('login-button');
-
+        var closeAddPhotoPopup = document.getElementById('add-photo-popup');
+        var closeEditPhotoPopup = document.getElementById('edit-photo-popup');
+        var editPhotoButton = document.getElementById('editPhotoButton');
 
         if (activeUserElement) {
             activeUserElement.innerText = isAuthorized ? user : null;
@@ -29,6 +31,18 @@ var photoPortalApp = (function () {
 
         if(loginButton){
             loginButton.addEventListener('click', loginHandler);
+        }
+        
+        if (closeAddPhotoPopup) {
+            closeAddPhotoPopup.addEventListener ('click', photoPostClientService.hideAddPhotoPopup);
+        }
+
+        if(closeEditPhotoPopup){
+            closeEditPhotoPopup.addEventListener('click', photoPostClientService.hideEditPhotoPopup);
+        }
+
+        if(editPhotoButton){
+            editPhotoButton.addEventListener('click', editPhotoPost);
         }
     }
 
@@ -50,6 +64,7 @@ var photoPortalApp = (function () {
             }
         }
     }
+
 
     function updateStateControls(isAuthorized) {
 
@@ -88,8 +103,11 @@ var photoPortalApp = (function () {
                 else{
                     if (!editButtons[i].classList.contains('hide-element')) {
                         editButtons[i].classList.add('hide-element');
+
                     }
-                }
+                } 
+                editButtons[i].addEventListener ('click', showEditPhotoPostPopup);
+
             }
         }
 
@@ -104,6 +122,8 @@ var photoPortalApp = (function () {
                     addPhotoButton.classList.add('hide-element');
                 }
             }
+
+            addPhotoButton.addEventListener('click', photoPostClientService.showAddPhotoPopup);
         }
     }
 
@@ -117,6 +137,53 @@ var photoPortalApp = (function () {
     function manageStateHandler(){
         photoPostClientService.showLoginPopup();
         domReady();
+    }
+
+
+    function showEditPhotoPostPopup(element){
+        var photoPostId = element.target.id;
+
+        var currentPhotoPost = photoService.getPhotoPost(photoPostId);
+
+        if(currentPhotoPost){
+            var editPostForm = document.forms.editPhotoForm; 
+            if(editPostForm) {
+                editPostForm.elements.description.value = currentPhotoPost.description;
+                editPostForm.elements.hashTags.value = currentPhotoPost.hashTags.join(', ');
+                //editPostForm.elements.photo.value = currentPhotoPost.photoLink;
+
+                photoPostClientService.showEditPhotoPopup(photoPostId);
+            } 
+        }
+    }
+
+    function editPhotoPost(element) {
+        var editPopup = document.getElementById('editPhotoPopup');
+        var photoPostId = editPopup.getAttribute('data-photo-post-id');
+
+        var editedPost = document.forms.editPhotoForm;
+
+        var description = editedPost.elements.description.value;
+        var hashTags = editedPost.elements.hashTags.value;
+        var photoLink = editedPost.elements.photo.value;
+
+        var photoPostToUpdate = {
+            description: description,
+            hashTags: hashTags.split(/[\,|\;]/),
+            photoLink: photoLink
+        };
+
+        var editResult = photoService.editPhotoPost(photoPostId, photoPostToUpdate);
+
+        if (editResult) {
+            photoPostClientService.clearPhotoPostsContainer();
+            photoPostClientService.getPhotoPosts();
+            updateStateControls(true);
+            editPopup.style.display = 'none';
+        }
+        else {
+            alert('Во время обновления фотопоста произошла ошибка. Попробуйте повторить позже.');
+        }
     }
 
     return {

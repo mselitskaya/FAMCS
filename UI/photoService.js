@@ -147,6 +147,7 @@ var photoService = (function () {
         }
         if (!photoPost) {
             console.log('Нет данных для обновления');
+            return false;
         }
         if (typeof photoPost !== 'object') {
             console.log('Неверный формат параметра photoPost ' + typeof photoPost);
@@ -160,6 +161,9 @@ var photoService = (function () {
             console.log('Фото-пост с id = ' + id + ' не существует.');
             return false;
         }
+
+        var element = photoPostDataStorage.getPhotoPosts()[index];
+
         if (photoPost.photoLink) {
             if (typeof photoPost.photoLink !== 'string') {
                 console.log('Неверный формат параметра photoLink ' + typeof photoPost.photoLink);
@@ -169,7 +173,8 @@ var photoService = (function () {
                 console.log('Поле photoLink не должно быть пустым');
                 return false;
             }
-            photoPostDataStorage.getPhotoPosts()[index]["photoLink"] = photoPost.photoLink;
+
+            element.photoLink = photoPost.photoLink;
         }
 
         if (photoPost.description != null) {
@@ -177,28 +182,25 @@ var photoService = (function () {
                 console.log('Неверный формат параметра description ' + typeof photoPost.description);
                 return false;
             }
-            photoPostDataStorage.getPhotoPosts()[index]["description"] = photoPost.description;
+
+            element.description = photoPost.description;
         }
 
         if (photoPost.hashTags) {
             if (typeof photoPost.hashTags !== 'object') {
                 console.log('Неверный формат параметра hashTags ' + typeof photoPost.hashTags);
             }
-            photoPostDataStorage.getPhotoPosts()[index]["hashTags"] = photoPost.hashTags;
-        }
-        if (photoPost.hashTags) {
-            if (typeof photoPost.hashTags !== 'object') {
-                console.log('Неверный формат параметра hashTags ' + typeof photoPost.hashTags);
-            }
-            photoPostDataStorage.getPhotoPosts()[index]["hashTags"] = photoPost.hashTags;
+            element.hashTags = photoPost.hashTags;
         }
 
         if (photoPost.likes) {
             if (typeof photoPost.likes !== 'object') {
                 console.log('Неверный формат параметра likes ' + typeof photoPost.likes);
             }
-            photoPostDataStorage.getPhotoPosts()[index]["likes"] = photoPost.likes;
+            element.likes = photoPost.likes;
         }
+
+        photoPostDataStorage.updatePhotoPost(index, element);
         return true;
     }
 
